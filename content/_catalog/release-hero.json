@@ -1,0 +1,38 @@
+{
+  "variants": { "locale": ["es", "en"], "theme": ["light", "dark"] },
+  "scale": 3,
+  "brand": "lockup",
+  "partner": { "platform": "facebook" },
+  "pill": { "label": { "es": "Nuevo", "en": "New" } },
+  "headline": {
+    "es": "Ahora conectá tu Facebook y programá",
+    "en": "Now connect Facebook and schedule"
+  },
+  "body": {
+    "es": "Posts, reels e historias para tu Página, publicados a la hora que elegís. Todo desde el mismo calendario de Instagram y TikTok.",
+    "en": "Posts, reels and stories for your Page, published at the time you choose. All from the same calendar as Instagram and TikTok."
+  },
+  "stage": {
+    "background": { "variant": "gradient" },
+    "canvas": { "width": 520, "height": 440 },
+    "layers": [
+      { "use": "HandArrow", "x": 320, "y": 12, "props": { "variant": "rise", "width": 210, "height": 420 } },
+      {
+        "use": "PostCard", "x": 130, "y": 34,
+        "props": { "platform": "facebook", "width": 260, "name": "Café Origen", "image": "assets/photos/cafe-especialidad.jpg" }
+      },
+      {
+        "use": "NotificationToast", "x": 18, "y": 150,
+        "props": { "variant": "pill", "icon": "Clock", "title": { "es": "Jueves 29", "en": "Thursday 29" }, "meta": "11:45" }
+      },
+      {
+        "use": "AnalyticsCard", "x": 14, "bottom": 26,
+        "props": { "label": { "es": "Tasa de interacción", "en": "Engagement rate" }, "value": "5,0%", "chart": "bars", "width": 144 }
+      },
+      {
+        "use": "AnalyticsCard", "right": 14, "y": 180,
+        "props": { "label": { "es": "Seguidores", "en": "Followers" }, "value": "+344", "chart": "area", "width": 160 }
+      }
+    ]
+  }
+}

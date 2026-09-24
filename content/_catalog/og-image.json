@@ -1,0 +1,41 @@
+{
+  "headline": {
+    "es": "Programá tus redes\ncon [[Planer]]",
+    "en": "Schedule your socials\nwith [[Planer]]"
+  },
+  "body": {
+    "es": "Calendario, aprobaciones y analíticas en un solo lugar.",
+    "en": "Calendar, approvals and analytics in one place."
+  },
+  "stage": {
+    "background": {
+      "variant": "gradient"
+    },
+    "layers": [
+      {
+        "use": "PostCard",
+        "x": 110,
+        "y": 70,
+        "zoom": 1.15,
+        "props": {
+          "platform": "instagram",
+          "width": 260
+        }
+      },
+      {
+        "use": "NotificationToast",
+        "x": 24,
+        "y": 400,
+        "zoom": 1.3,
+        "props": {
+          "icon": "Clock",
+          "title": {
+            "es": "Jueves 29",
+            "en": "Thursday 29"
+          },
+          "meta": "11:45"
+        }
+      }
+    ]
+  }
+}

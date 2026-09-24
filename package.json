@@ -1,0 +1,35 @@
+{
+  "name": "planer-brand",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "tsx scripts/render.ts",
+    "catalog": "tsx scripts/catalog.ts",
+    "sync-tokens": "tsx scripts/sync-tokens.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.528",
+    "@remotion/cli": "^4.0.528",
+    "@remotion/fonts": "^4.0.528",
+    "@remotion/renderer": "^4.0.528",
+    "@remotion/tailwind-v4": "^4.0.528",
+    "@remotion/zod-types": "^4.0.528",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.454.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.528",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.2.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

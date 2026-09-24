@@ -1,0 +1,109 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "brand": "wordmark",
+  "pill": {
+    "label": "Nuevo"
+  },
+  "headline": "Del brief al post,\n[[sin salir de Planer]]",
+  "headlineSize": 76,
+  "background": {
+    "variant": "glow"
+  },
+  "layers": [
+    {
+      "use": "NotebookPage",
+      "x": 64,
+      "y": 507,
+      "zoom": 1.06,
+      "rotate": -3,
+      "props": {
+        "client": "Café Origen",
+        "icon": "☕",
+        "title": "Brief de primavera",
+        "editedBy": "Ana",
+        "width": 470,
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tono cálido y cercano. Mostramos el **blend de temporada** en la barra."
+          },
+          {
+            "type": "todos",
+            "items": [
+              {
+                "text": "Fotos del latte art",
+                "done": true
+              },
+              {
+                "text": "Copy para el reel",
+                "done": true
+              },
+              {
+                "text": "Programar el lanzamiento"
+              }
+            ]
+          },
+          {
+            "type": "palette",
+            "swatches": [
+              {
+                "hex": "#6b3f2a",
+                "name": "Tostado"
+              },
+              {
+                "hex": "#e9d8c4",
+                "name": "Crema"
+              },
+              {
+                "hex": "#2f4a3a",
+                "name": "Hoja"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "use": "PhoneFrame",
+      "x": 653,
+      "y": 400,
+      "zoom": 1.02,
+      "rotate": 4,
+      "props": {
+        "width": 390,
+        "padding": 14
+      },
+      "children": [
+        {
+          "use": "PostCard",
+          "props": {
+            "platform": "instagram",
+            "width": 334,
+            "caption": "Llegó el blend de primavera ☕ Desde hoy en la barra.",
+            "time": "Hace 1 hora"
+          }
+        }
+      ]
+    },
+    {
+      "use": "NotificationToast",
+      "x": 330,
+      "props": {
+        "variant": "pill",
+        "icon": "CalendarCheck",
+        "iconBadge": true,
+        "title": "Programado · Jue 18:30",
+        "size": 22
+      },
+      "bottom": 40
+    }
+  ]
+}

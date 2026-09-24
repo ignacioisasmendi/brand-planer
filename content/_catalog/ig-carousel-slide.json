@@ -1,0 +1,95 @@
+{
+  "slide": 2,
+  "total": 5,
+  "swipeHint": {
+    "es": "Deslizá",
+    "en": "Swipe"
+  },
+  "pill": {
+    "label": {
+      "es": "Tip 2",
+      "en": "Tip 2"
+    }
+  },
+  "headline": {
+    "es": "Ordená cada pieza\nen un [[tablero]]",
+    "en": "Keep every piece\non a [[board]]"
+  },
+  "body": {
+    "es": "Ideas, en progreso y revisión: todo el equipo ve en qué está cada post.",
+    "en": "Ideas, in progress, review: the whole team sees where each post is."
+  },
+  "background": {
+    "variant": "grid",
+    "surface": "background"
+  },
+  "layers": [
+    {
+      "use": "KanbanColumn",
+      "x": 90,
+      "y": 660,
+      "zoom": 1.5,
+      "rotate": -2,
+      "props": {
+        "name": {
+          "es": "En progreso",
+          "en": "In progress"
+        },
+        "tasks": [
+          {
+            "title": {
+              "es": "Editar video de lanzamiento",
+              "en": "Edit launch video"
+            },
+            "labels": [
+              "Video"
+            ],
+            "priority": "URGENT",
+            "dueDate": "12 mar",
+            "cover": "red"
+          },
+          {
+            "title": {
+              "es": "Escribir copies de la semana",
+              "en": "Write this week's copy"
+            },
+            "labels": [
+              "Contenido"
+            ],
+            "priority": "HIGH",
+            "checklistDone": 3,
+            "checklistTotal": 5
+          }
+        ]
+      }
+    },
+    {
+      "use": "KanbanColumn",
+      "x": 560,
+      "y": 710,
+      "zoom": 1.5,
+      "rotate": 2,
+      "props": {
+        "name": {
+          "es": "Revisión",
+          "en": "Review"
+        },
+        "tasks": [
+          {
+            "title": {
+              "es": "Aprobar grilla de abril",
+              "en": "Approve April grid"
+            },
+            "labels": [
+              "Cliente"
+            ],
+            "priority": "HIGH",
+            "checklistDone": 2,
+            "checklistTotal": 2,
+            "cover": "green"
+          }
+        ]
+      }
+    }
+  ]
+}

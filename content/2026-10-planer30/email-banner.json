@@ -1,0 +1,31 @@
+{
+  "variants": { "locale": ["es"], "theme": ["light"] },
+  "brand": "wordmark",
+  "pill": { "label": "Solo lista de espera" },
+  "bigStat": { "value": "30%", "suffix": "OFF" },
+  "body": "en tus **primeros 2 meses**,\nen cualquier plan.",
+  "stage": {
+    "background": { "variant": "gradient" },
+    "layers": [
+      { "use": "HandArrow", "x": 420, "y": 0, "props": { "variant": "swoop", "width": 120, "height": 600, "strokeWidth": 2.4 } },
+      { "use": "Sparkle", "x": 44, "y": 70, "props": { "size": 26 } },
+      { "use": "Sparkle", "x": 420, "y": 470, "props": { "size": 34 } },
+      { "use": "Sparkle", "x": 360, "y": 96, "props": { "size": 16, "opacity": 0.85 } },
+      {
+        "use": "CouponTicket", "x": 62, "y": 150, "rotate": -7,
+        "props": {
+          "eyebrow": "Pase reservado",
+          "title": "Tu lugar\nen Planer",
+          "code": "PLANER30",
+          "foot": "Cualquier plan",
+          "stubValue": "2",
+          "stubUnit": "Meses"
+        }
+      },
+      {
+        "use": "NotificationToast", "x": 30, "bottom": 74,
+        "props": { "variant": "pill", "icon": "Check", "iconBadge": true, "title": "Tu lugar está guardado", "size": 21 }
+      }
+    ]
+  }
+}

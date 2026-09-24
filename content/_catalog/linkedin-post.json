@@ -1,0 +1,66 @@
+{
+  "eyebrow": {
+    "es": "Para agencias",
+    "en": "For agencies"
+  },
+  "headline": {
+    "es": "Todos tus clientes,\nun solo calendario",
+    "en": "Every client,\none calendar"
+  },
+  "body": {
+    "es": "Aprobaciones, tareas y reportes sin planillas sueltas.",
+    "en": "Approvals, tasks and reports without scattered spreadsheets."
+  },
+  "stage": {
+    "background": {
+      "variant": "gradient"
+    },
+    "layers": [
+      {
+        "use": "PublicationCard",
+        "x": 60,
+        "y": 90,
+        "zoom": 1.3,
+        "rotate": -4,
+        "props": {
+          "caption": {
+            "es": "Lanzamiento del blend de primavera",
+            "en": "Spring blend launch"
+          },
+          "status": "scheduled",
+          "approved": true,
+          "image": "assets/photos/cafe-especialidad.jpg",
+          "width": 220
+        }
+      },
+      {
+        "use": "AnalyticsCard",
+        "x": 330,
+        "y": 120,
+        "zoom": 1.25,
+        "props": {
+          "label": {
+            "es": "Alcance",
+            "en": "Reach"
+          },
+          "value": "12,4 mil",
+          "chart": "area",
+          "width": 160
+        }
+      },
+      {
+        "use": "AvatarStack",
+        "x": 330,
+        "y": 400,
+        "zoom": 1.2,
+        "props": {
+          "extra": 4,
+          "label": {
+            "es": "7 personas",
+            "en": "7 people"
+          }
+        }
+      }
+    ]
+  }
+}

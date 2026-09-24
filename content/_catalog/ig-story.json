@@ -1,0 +1,69 @@
+{
+  "align": "center",
+  "brand": "logo",
+  "headline": {
+    "es": "Tu semana,\n[[programada]]",
+    "en": "Your week,\n[[scheduled]]"
+  },
+  "body": {
+    "es": "Instagram, TikTok, Facebook y LinkedIn en un solo calendario.",
+    "en": "Instagram, TikTok, Facebook and LinkedIn in one calendar."
+  },
+  "cta": {
+    "label": {
+      "es": "Probalo gratis",
+      "en": "Try it free"
+    }
+  },
+  "copyPosition": "top",
+  "background": {
+    "variant": "gradient"
+  },
+  "layers": [
+    {
+      "use": "CalendarWeek",
+      "x": 44,
+      "y": 1000,
+      "zoom": 1.55,
+      "props": {
+        "days": 4,
+        "startDay": 3,
+        "today": 4,
+        "columnWidth": 160,
+        "height": 520,
+        "posts": [
+          {
+            "day": 3,
+            "time": "09:30",
+            "caption": "Colección primavera",
+            "status": "published",
+            "image": "assets/photos/croissant.jpg"
+          },
+          {
+            "day": 4,
+            "time": "12:00",
+            "caption": "Nuevo blend",
+            "status": "scheduled",
+            "image": "assets/photos/cafe-especialidad.jpg"
+          },
+          {
+            "day": 5,
+            "time": "18:00",
+            "caption": "Detrás de la barra",
+            "platform": "tiktok",
+            "status": "scheduled",
+            "image": "assets/photos/cafetera.jpg"
+          },
+          {
+            "day": 6,
+            "time": "10:00",
+            "caption": "Receta del día",
+            "platform": "facebook",
+            "status": "draft",
+            "image": "assets/photos/coffee.jpg"
+          }
+        ]
+      }
+    }
+  ]
+}
