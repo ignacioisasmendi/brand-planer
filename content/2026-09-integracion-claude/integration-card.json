@@ -1,0 +1,7 @@
+{
+  "variants": { "locale": ["es"], "theme": ["light", "dark"] },
+  "scale": 2,
+  "left": "planer",
+  "right": "claude",
+  "icon": "Check"
+}

@@ -31,6 +31,9 @@ export const REGISTRY = {
   Sparkle: { schema: P.sparkleSchema, C: P.Sparkle },
   HandArrow: { schema: P.handArrowSchema, C: P.HandArrow },
   CouponTicket: { schema: P.couponTicketSchema, C: P.CouponTicket },
+  IntegrationTiles: { schema: P.integrationTilesSchema, C: P.IntegrationTiles },
+  IntegrationHandoff: { schema: P.integrationHandoffSchema, C: P.IntegrationHandoff },
+  LogoChip: { schema: P.logoChipSchema, C: P.LogoChip },
   // mockups
   PostCard: { schema: M.postCardSchema, C: M.PostCard },
   PublicationCard: { schema: M.publicationCardSchema, C: M.PublicationCard },
@@ -43,6 +46,19 @@ export const REGISTRY = {
   AvatarStack: { schema: M.avatarStackSchema, C: M.AvatarStack },
   NotebookPage: { schema: M.notebookPageSchema, C: M.NotebookPage },
   FeedGrid: { schema: M.feedGridSchema, C: M.FeedGrid },
+  // full app screens (ported from spa/components/design-system)
+  AppFrame: { schema: M.appFrameSchema, C: M.AppFrame },
+  DashboardScreen: { schema: M.dashboardScreenSchema, C: M.DashboardScreen },
+  AnalyticsScreen: { schema: M.analyticsScreenSchema, C: M.AnalyticsScreen },
+  EngagementScreen: { schema: M.engagementScreenSchema, C: M.EngagementScreen },
+  MediaScreen: { schema: M.mediaScreenSchema, C: M.MediaScreen },
+  CalendarScreen: { schema: M.calendarScreenSchema, C: M.CalendarScreen },
+  TasksScreen: { schema: M.tasksScreenSchema, C: M.TasksScreen },
+  SchedulePostModal: { schema: M.schedulePostModalSchema, C: M.SchedulePostModal },
+  CampaignCard: { schema: M.campaignCardSchema, C: M.CampaignCard },
+  PlanBadge: { schema: M.planBadgeSchema, C: M.PlanBadge },
+  TrialBanner: { schema: M.trialBannerSchema, C: M.TrialBanner },
+  FounderBanner: { schema: M.founderBannerSchema, C: M.FounderBanner },
 } satisfies Record<string, Entry>;
 
 export type LayerName = keyof typeof REGISTRY;

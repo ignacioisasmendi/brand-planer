@@ -44,6 +44,11 @@ ln -s "$PWD/.claude/agents/release-notes.md" ~/.claude/agents/release-notes.md
   offsets by the zoom to compensate, so keep that when touching `RenderLayer`/`Stage`.
 - `cn()` is clsx + tailwind-merge, like the spa. Without the merge, overrides such as the
   status badge colours lose to the base `bg-primary`.
-- Renders put temp files in `.cache/tmp` (the disk is tight; a render once filled it).
+- Renders put temp files in `.cache/tmp` and wipe it afterwards. The webpack cache is **disabled**
+  (`enableCaching: false`, `Config.setCachingEnabled(false)`): it grew ~100MB per rebuild and filled the
+  disk twice. Don't turn it back on.
+- `src/mockups/app/` is a port of `spa/components/design-system/screens|composites`. `ui.tsx` there holds
+  static copies of the shadcn primitives (no Radix). Recharts can't use ResponsiveContainer in a still, so
+  `ChartContainer` takes numeric `width`/`height` (AnalyticsScreen gets `chartWidth` from its box).
 - Remotion's `Still` merges `defaultProps` under input props: a default `zoom` or size
   leaks into renders that don't set it.

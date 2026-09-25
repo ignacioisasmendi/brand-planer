@@ -190,12 +190,12 @@ export function PostCard(input: PostCardProps) {
             {p.comments} {t.comments} · {p.shares} {t.shares}
           </span>
         </div>
-        <div className="mx-3 grid grid-cols-4 border-t border-border/60 py-2 text-[10px] text-muted-foreground">
+        <div className="mx-3 flex justify-between border-t border-border/60 py-2 text-[10px] text-muted-foreground">
           {t.li.map((label, i) => {
             const I = [ThumbsUp, MessageCircle, Repeat2, Send][i];
             return (
               <span key={label} className="flex items-center justify-center gap-1 whitespace-nowrap">
-                <I className="size-3" />
+                <I className="size-3 shrink-0" />
                 {label}
               </span>
             );
@@ -244,7 +244,7 @@ export function PostCard(input: PostCardProps) {
           const I = [ThumbsUp, MessageCircle, Send, Share2][i];
           return (
             <span key={label} className="flex items-center justify-center gap-0.5 whitespace-nowrap">
-              <I className="size-3" />
+              <I className="size-3 shrink-0" />
               {label}
             </span>
           );

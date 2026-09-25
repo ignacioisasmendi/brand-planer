@@ -1,0 +1,43 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "scale": 2,
+  "eyebrow": "Analíticas",
+  "headline": "Tu rendimiento,\n[[en un vistazo]]",
+  "headlineSize": 56,
+  "body": "Alcance, impresiones, seguidores e interacción, con los posts que mejor funcionaron.",
+  "stage": {
+    "background": {
+      "variant": "gradient"
+    },
+    "layers": [
+      {
+        "use": "BrowserFrame",
+        "x": 60,
+        "y": 70,
+        "zoom": 0.62,
+        "props": {
+          "width": 1240,
+          "height": 856
+        },
+        "children": [
+          {
+            "use": "AnalyticsScreen",
+            "props": {
+              "bare": true,
+              "width": 1240,
+              "height": 812
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

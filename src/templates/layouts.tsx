@@ -84,7 +84,12 @@ export function Piece({ theme, locale, children }: { theme: Theme; locale: Local
     <PieceProvider theme={theme} locale={locale}>
       <AbsoluteFill className={cn(theme === 'dark' && 'dark')} style={{ fontFamily: 'Inter' }}>
         {/* A `.dark` element's own variables apply to itself, so the surface flips too. */}
-        <AbsoluteFill className="bg-card text-foreground">{children}</AbsoluteFill>
+        <AbsoluteFill
+          className="bg-card text-foreground"
+          style={{
+            fontFamily: 'Helvetica'
+          }}
+        >{children}</AbsoluteFill>
       </AbsoluteFill>
     </PieceProvider>
   );

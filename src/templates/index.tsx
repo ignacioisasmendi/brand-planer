@@ -5,9 +5,10 @@
  */
 import type { ComponentType } from 'react';
 import { z } from 'zod';
-import { localized, tr } from '../lib/i18n';
+import { baseProps, localized, tr } from '../lib/i18n';
 import { Icon } from '../lib/icon';
-import { PosterLayout, posterSchema, SplitLayout, splitSchema, type CopyScale } from './layouts';
+import { IntegrationHandoff, IntegrationTiles, integrationTilesSchema } from '../primitives';
+import { Piece, PosterLayout, posterSchema, SplitLayout, splitSchema, type CopyScale } from './layouts';
 
 // ── split (landscape) ───────────────────────────────────────────────────────
 
@@ -100,6 +101,30 @@ export function IgStory(props: z.input<typeof igStorySchema>) {
   return <PosterLayout props={igStorySchema.parse(props)} pad={96} safeTop={160} safeBottom={240} scale={STORY_SCALE} />;
 }
 
+// ── card (no copy) ──────────────────────────────────────────────────────────
+
+export const integrationCardSchema = z.object({
+  ...baseProps,
+  /** tiles = two tiles joined by a badge (soft tint) · handoff = tilted chips linked by a hand-drawn curl (strong tint). */
+  layout: z.enum(['tiles', 'handoff']).default('tiles'),
+  ...integrationTilesSchema.omit({ size: true, panel: true }).shape,
+});
+/** "Planer ✓ Partner" card for integrations directories and the landing: tinted panel on the page surface. */
+export function IntegrationCard(props: z.input<typeof integrationCardSchema>) {
+  const { theme, locale, layout, left, right, icon } = integrationCardSchema.parse(props);
+  return (
+    <Piece theme={theme} locale={locale}>
+      <div className="absolute inset-0 flex items-center justify-center bg-background">
+        {layout === 'tiles' ? (
+          <IntegrationTiles left={left} right={right} icon={icon} size={400} />
+        ) : (
+          <IntegrationHandoff from={left} to={right} width={1120} />
+        )}
+      </div>
+    </Piece>
+  );
+}
+
 // ── registry ────────────────────────────────────────────────────────────────
 
 export interface TemplateDef {
@@ -120,6 +145,7 @@ export const TEMPLATES: TemplateDef[] = [
   { id: 'LinkedInPost', file: 'linkedin-post', width: 1200, height: 627, schema: linkedInPostSchema, component: LinkedInPost },
   { id: 'EmailBanner', file: 'email-banner', width: 1200, height: 600, schema: emailBannerSchema, component: EmailBanner },
   { id: 'OgImage', file: 'og-image', width: 1200, height: 630, schema: ogImageSchema, component: OgImage },
+  { id: 'IntegrationCard', file: 'integration-card', width: 1200, height: 750, schema: integrationCardSchema, component: IntegrationCard },
 ];
 
 /** `ig-post.json`, `ig-carousel-slide-02.json` → template (suffixes allow several per folder). */

@@ -39,6 +39,9 @@ export const SPECIMENS: Spec[] = [
     props: { eyebrow: 'Pase reservado', title: 'Tu lugar\nen Planer', code: 'PLANER30', foot: 'Cualquier plan', stubValue: '2', stubUnit: 'Meses' },
     width: 600, height: 360, surface: 'stage',
   },
+  { group: 'Primitives', use: 'IntegrationTiles', props: { left: 'planer', right: 'claude', size: 200 }, width: 700, height: 440 },
+  { group: 'Primitives', use: 'IntegrationHandoff', props: { from: 'planer', to: 'claude', width: 640 }, width: 700, height: 440 },
+  { group: 'Primitives', use: 'LogoChip', props: { logo: 'planer', size: 56 }, width: 500, height: 240, surface: 'stage' },
   // mockups
   { group: 'Mockups', use: 'PostCard', note: 'platform: instagram', props: { platform: 'instagram' }, zoom: 1.2, width: 520, height: 640, surface: 'stage' },
   { group: 'Mockups', use: 'PostCard', note: 'platform: facebook', props: { platform: 'facebook', width: 260 }, zoom: 1.4, width: 520, height: 640, surface: 'stage' },
@@ -92,6 +95,20 @@ export const SPECIMENS: Spec[] = [
   { group: 'Mockups', use: 'NotificationToast', note: 'variant: pill', props: { icon: 'Clock', title: 'Jueves 29', meta: '11:45' }, zoom: 2, width: 500, height: 200 },
   { group: 'Mockups', use: 'NotificationToast', note: 'variant: toast', props: { variant: 'toast', platform: 'instagram', title: 'Publicado en Instagram', meta: 'Nuevo blend de temporada · hace 1 min' }, zoom: 1.6, width: 700, height: 240 },
   { group: 'Mockups', use: 'AvatarStack', props: { extra: 4, size: 48, label: '7 personas' }, width: 500, height: 200 },
+  // app screens + composites (ported from spa/components/design-system)
+  { group: 'Mockups', use: 'DashboardScreen', width: 1300, height: 840 },
+  { group: 'Mockups', use: 'AnalyticsScreen', width: 1300, height: 872 },
+  { group: 'Mockups', use: 'EngagementScreen', width: 1300, height: 840 },
+  { group: 'Mockups', use: 'MediaScreen', width: 1300, height: 840 },
+  { group: 'Mockups', use: 'CalendarScreen', width: 1300, height: 840 },
+  { group: 'Mockups', use: 'CalendarScreen', note: 'view: week', props: { view: 'week' }, width: 1300, height: 840 },
+  { group: 'Mockups', use: 'TasksScreen', width: 1300, height: 840 },
+  { group: 'Mockups', use: 'SchedulePostModal', width: 1160, height: 780 },
+  { group: 'Mockups', use: 'AppFrame', note: 'active: tools', props: { active: 'tools' }, width: 1300, height: 840 },
+  { group: 'Mockups', use: 'CampaignCard', zoom: 1.3, width: 560, height: 380 },
+  { group: 'Mockups', use: 'PlanBadge', zoom: 2.5, width: 400, height: 160 },
+  { group: 'Mockups', use: 'TrialBanner', zoom: 1.2, width: 900, height: 180 },
+  { group: 'Mockups', use: 'FounderBanner', zoom: 1.2, width: 900, height: 180 },
 ];
 
 /** File name of a specimen's thumbnail in docs/catalog/ (without .png). */

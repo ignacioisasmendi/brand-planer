@@ -2,12 +2,13 @@ import { z } from 'zod';
 import { usePiece } from '../lib/context';
 import { localized, tr } from '../lib/i18n';
 
-const decorColor = z.enum(['white', 'brand', 'ink', 'card']);
+const decorColor = z.enum(['white', 'brand', 'ink', 'card', 'foreground']);
 const COLOR: Record<z.infer<typeof decorColor>, string> = {
   white: '#fff',
   card: 'var(--card)',
   brand: 'var(--brand)',
   ink: 'var(--stage-ink)',
+  foreground: 'var(--foreground)',
 };
 
 export const sparkleSchema = z.object({
@@ -26,8 +27,8 @@ export function Sparkle({ size = 28, color = 'card', opacity = 1 }: z.input<type
 }
 
 export const handArrowSchema = z.object({
-  /** rise = release-screen curve · swoop = PLANER30 banner curve. */
-  variant: z.enum(['rise', 'swoop']).default('rise'),
+  /** rise = release-screen curve · swoop = PLANER30 banner curve · loop = downward curl ending right (integration handoff). */
+  variant: z.enum(['rise', 'swoop', 'loop']).default('rise'),
   width: z.number().default(210),
   height: z.number().default(420),
   color: decorColor.default('ink'),
@@ -46,9 +47,14 @@ const ARROWS = {
     body: 'M50 560 C 100 470, 85 360, 50 300 C 25 255, 30 150, 58 70',
     head: 'M32 96 L58 66 L80 100',
   },
+  loop: {
+    viewBox: '0 0 140 130',
+    body: 'M22 4 C 12 40, 14 78, 42 88 C 70 98, 78 64, 58 58 C 38 52, 34 92, 60 104 C 80 113, 105 114, 128 112',
+    head: 'M110 98 L130 112 L108 124',
+  },
 };
 
-/** Hand-drawn upward arrow — the growth gesture shared by release art and campaigns. */
+/** Hand-drawn arrow: upward growth gesture (rise, swoop) shared by release art and campaigns, or a downward curl (loop). */
 export function HandArrow({
   variant = 'rise',
   width = 210,

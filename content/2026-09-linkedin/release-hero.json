@@ -1,0 +1,38 @@
+{
+  "variants": { "locale": ["es", "en"], "theme": ["light", "dark"] },
+  "scale": 3,
+  "brand": "lockup",
+  "partner": { "platform": "linkedin" },
+  "pill": { "label": { "es": "Nuevo", "en": "New" } },
+  "headline": {
+    "es": "Ahora conectá tu LinkedIn y programá",
+    "en": "Now connect LinkedIn and schedule"
+  },
+  "body": {
+    "es": "Publicaciones para tu página de empresa, a la hora que elegís, con sus métricas. Todo desde el mismo calendario de tus otras redes.",
+    "en": "Posts for your company page, published at the time you choose, with their metrics. All from the same calendar as your other networks."
+  },
+  "stage": {
+    "background": { "variant": "gradient" },
+    "canvas": { "width": 520, "height": 440 },
+    "layers": [
+      { "use": "HandArrow", "x": 372, "y": 12, "props": { "variant": "rise", "width": 210, "height": 420 } },
+      {
+        "use": "PostCard", "x": 160, "y": 18,
+        "props": { "platform": "linkedin", "width": 292, "name": "Estudio Norte", "image": "assets/photos/cafetera.jpg" }
+      },
+      {
+        "use": "NotificationToast", "x": 18, "y": 120,
+        "props": { "variant": "pill", "icon": "Clock", "title": { "es": "Martes 7", "en": "Tuesday 7" }, "meta": "09:30" }
+      },
+      {
+        "use": "AnalyticsCard", "x": 14, "bottom": 14,
+        "props": { "label": { "es": "Impresiones", "en": "Impressions" }, "value": "12,4K", "chart": "bars", "width": 144 }
+      },
+      {
+        "use": "AnalyticsCard", "right": 14, "y": 140,
+        "props": { "label": { "es": "Seguidores", "en": "Followers" }, "value": "+218", "chart": "area", "width": 160 }
+      }
+    ]
+  }
+}

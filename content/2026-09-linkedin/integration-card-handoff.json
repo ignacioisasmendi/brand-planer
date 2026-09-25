@@ -1,0 +1,7 @@
+{
+  "variants": { "locale": ["es"], "theme": ["light", "dark"] },
+  "scale": 2,
+  "layout": "handoff",
+  "left": "planer",
+  "right": "linkedin"
+}

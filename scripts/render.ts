@@ -61,6 +61,8 @@ export async function run(jobs: Job[]) {
     entryPoint: path.join(ROOT, 'src/index.ts'),
     webpackOverride,
     publicDir: path.join(ROOT, 'public'),
+    // The webpack cache grows by ~100MB per build and once filled the disk.
+    enableCaching: false,
   });
   const browser = await openBrowser('chrome');
   try {
@@ -80,7 +82,8 @@ export async function run(jobs: Job[]) {
     }
   } finally {
     await browser.close({ silent: true });
-    rmSync(serveUrl, { recursive: true, force: true });
+    // Bundle + downloaded assets: wipe everything this run left in .cache/tmp.
+    for (const entry of readdirSync(TMP)) rmSync(path.join(TMP, entry), { recursive: true, force: true });
   }
 }
 

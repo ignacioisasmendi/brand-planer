@@ -43,6 +43,7 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 
 | Template | Size | Layout | Extra props | Demo |
 |---|---|---|---|---|
+| **IntegrationCard** | 1200×750 (render at `scale: 2`) | No copy, for integration directories and the landing. `layout: tiles` = "Planer ✓ partner" tiles on a soft tint · `layout: handoff` = tilted chips joined by a hand-drawn curl on a strong tint | `layout`, `left`, `right` (`planer`·`planer-mark`·`claude`·`instagram`·`facebook`·`tiktok`·`linkedin`), `icon` (lucide, default `Check`) | ![](docs/catalog/template-IntegrationCard.png) |
 | **ReleaseHero** | 1600×900 (render at `scale: 3`) | Copy left, brand stage right. The spa's release screen at ×1.47 | `stage.canvas` = `{520,440}`, the same canvas as the spa's release visuals, so their coordinates copy straight over; `stage.layers`; `stage.background` | ![](docs/catalog/template-ReleaseHero.png) |
 | **EmailBanner** | 1200×600 | Copy left, 540px stage right | `stage` (layers in stage px); `stageWidth` | ![](docs/catalog/template-EmailBanner.png) |
 | **LinkedInPost** | 1200×627 | Copy left, 560px stage right | `stage`, `stageWidth` | ![](docs/catalog/template-LinkedInPost.png) |
@@ -58,6 +59,9 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 | **Logo** | The Planer mark (brand violet in both themes) | `size` | ![](docs/catalog/Logo.png) |
 | **Wordmark** | Mark + "planer" | `size` (mark height) | ![](docs/catalog/Wordmark.png) |
 | **LogoLockup** | Planer ⇄ partner, as in releases | `size`, `platform` or `icon` (lucide name) | ![](docs/catalog/LogoLockup-instagram.png) |
+| **IntegrationTiles** | Two logo tiles joined by a round badge, on an optional tinted panel. Partner logos live in `public/assets/partners/` in their own colours | `left`, `right`, `size` (tile side), `icon`, `panel` | ![](docs/catalog/IntegrationTiles.png) |
+| **IntegrationHandoff** | "Planer ↘ partner": two tilted LogoChips joined by a looping HandArrow, on a strong tint | `from`, `to` (same logos as IntegrationTiles), `width` (height = 0.6×), `panel` | ![](docs/catalog/IntegrationHandoff.png) |
+| **LogoChip** | A logo on a rounded card chip with a translucent halo; tilt it with the layer's `rotate` | `logo`, `size` (logo height), `halo` | ![](docs/catalog/LogoChip.png) |
 | **Pill** | Uppercase capsule: "NUEVO", "SOLO LISTA DE ESPERA" | `label`, `tone` (`brand`·`muted`·`outline`·`solid`), `size`, `icon`, `density` (`regular`·`compact`) | ![](docs/catalog/Pill.png) |
 | **Eyebrow** | Small tracked kicker above a title | `label`, `size`, `tone` | ![](docs/catalog/Eyebrow.png) |
 | **Headline** | Display title, Inter 800, tracking-tight | `text` (`**b**`, `[[accent]]`, `\n`), `size`, `weight`, `align` | ![](docs/catalog/Headline.png) |
@@ -66,7 +70,7 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 | **Cta** | Button-shaped call to action | `label`, `variant` (`brand`·`outline`·`foreground`), `size`, `icon` (`"none"` hides it) | ![](docs/catalog/Cta.png) |
 | **Background** | Fills a canvas or stage | `variant` (`flat`·`gradient`·`grid`·`glow`), `surface` (`card`·`background`·`muted`), `cell` | Used by every template |
 | **Sparkle** | Four-point sparkle decoration | `size`, `color` (`card`·`white`·`brand`·`ink`), `opacity` | ![](docs/catalog/Sparkle.png) |
-| **HandArrow** | Hand-drawn growth arrow | `variant` (`rise`·`swoop`), `width`, `height`, `strokeWidth`, `flip` | ![](docs/catalog/HandArrow.png) |
+| **HandArrow** | Hand-drawn growth arrow | `variant` (`rise`·`swoop`·`loop`), `color` (`ink`·`foreground`·`brand`·`card`·`white`), `width`, `height`, `strokeWidth`, `flip` | ![](docs/catalog/HandArrow.png) |
 | **CouponTicket** | Tear-off pass with a promo code (campaigns) | `eyebrow`, `title`, `code`, `foot`, `stubValue`, `stubUnit` | ![](docs/catalog/CouponTicket.png) |
 
 ## Mockups (`src/mockups/`), faithful copies of Planer's UI
@@ -84,6 +88,32 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 | **AnalyticsCard** | Floating metric tile | `label`, `value`, `trend` (`up`·`down`·`none`), `chart` (`bars`·`area`·`none`), `bars`, `highlight`, `width` | ![](docs/catalog/AnalyticsCard.png) |
 | **NotificationToast** | Slot pill ("Jueves 29 · 11:45"), confirmation chip, or toast | `variant` (`pill`·`toast`), `title`, `meta`, `icon` or `platform`, `iconBadge`, `size` | ![](docs/catalog/NotificationToast.png) ![](docs/catalog/NotificationToast-instagram.png) |
 | **AvatarStack** | Overlapping team avatars | `people[]` (`name`, `image`), `extra`, `size`, `label` | ![](docs/catalog/AvatarStack.png) |
+
+## App screens (`src/mockups/screens.tsx`), full Planer screens
+
+Ported from `spa/components/design-system/screens` + `composites`, which mirror the real app. Each screen
+is a fixed box (`width`/`height`, app scale) with the sidebar included. Scale it with the layer's `zoom`, or
+set `bare: true` to drop the border and shadow and put it inside a `BrowserFrame` (see
+`content/2026-10-analiticas/linkedin-post.json`). **Every prop of the spa screen passes through**, so you can
+override the data (`kpis`, `trend`, `topPosts`, `stats`, `posts`, `lists`…) and the frame (`clientName`,
+`userName`…). UI text is **Spanish only**.
+
+| Name | Screen | Default size | Main props (besides width/height/bare) | Thumbnail |
+|---|---|---|---|---|
+| **DashboardScreen** | Inicio: greeting, 4 stats, upcoming posts, quick actions | 1240×780 | `greeting`, `date`, `stats[]`, `upcoming[]` | ![](docs/catalog/DashboardScreen.png) |
+| **AnalyticsScreen** | Analíticas: account + period, 4 KPIs, reach vs. impressions chart, top posts | 1240×812 | `account`, `kpis[]` (`label`,`value`,`delta`,`up`), `trend[]` (`day`,`reach`,`views`), `topPosts[]` | ![](docs/catalog/AnalyticsScreen.png) |
+| **EngagementScreen** | Interacción: comments per post with replies | 1240×780 | `account`, `posts[]` with `comments[]` | ![](docs/catalog/EngagementScreen.png) |
+| **MediaScreen** | Biblioteca de medios: folders, assets, storage usage | 1240×780 | `folders[]`, `assets[]`, `usedGb`, `totalGb` | ![](docs/catalog/MediaScreen.png) |
+| **CalendarScreen** | Calendario, month or week, with the calendar topbar | 1240×780 | `view` (`month`·`week`), `posts[]`, `monthLabel`, `weekLabel`, `todayDay` | ![](docs/catalog/CalendarScreen.png) ![](docs/catalog/CalendarScreen-2.png) |
+| **TasksScreen** | Tareas: kanban board with lists and task cards | 1240×780 | `boardName`, `view`, `lists[]` (`name`, `tasks[]`) | ![](docs/catalog/TasksScreen.png) |
+| **SchedulePostModal** | The composer: account, format tabs, media, caption, live preview | 1100×720 | `format` (`feed`·`reel`·`story`), `caption`, `accounts[]`, `tab` | ![](docs/catalog/SchedulePostModal.png) |
+| **AppFrame** | Just the chrome (sidebar); nested `children` layers go in the content area | 1240×780 | `active` (nav row), `clientName`, `plan`, `channels[]`, `topbar` | ![](docs/catalog/AppFrame.png) |
+| **CampaignCard** | A campaign card | 340 wide | `name`, `description`, `color`, `startDate`, `endDate`, `postCount` | ![](docs/catalog/CampaignCard.png) |
+| **PlanBadge** | The "Plan Pro" usage badge | auto | `plan`, `tone` (`normal`·`amber`·`red`) | ![](docs/catalog/PlanBadge.png) |
+| **TrialBanner** | Free-trial countdown strip | 720 wide | `daysLeft`, `cta` | ![](docs/catalog/TrialBanner.png) |
+| **FounderBanner** | "Precio Fundador" countdown strip | 720 wide | `daysLeft`, `expired`, `announcementLabel` | ![](docs/catalog/FounderBanner.png) |
+
+For the exact prop shapes, read the interfaces at the top of each file in `src/mockups/app/`.
 
 **Images** for `avatar`/`image` are paths under `public/`: `assets/photos/{cafe-especialidad,cafetera,coffee,croissant}.jpg`,
 `assets/photos/cafe-icon.png`. Add new demo photos there. They must be neutral, fictional brands, never real clients.
