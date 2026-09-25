@@ -1,0 +1,104 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "brand": "wordmark",
+  "pill": {
+    "label": "Vista del feed"
+  },
+  "headline": "Mirá tu feed\n[[antes de publicar]]",
+  "headlineSize": 72,
+  "background": {
+    "variant": "glow"
+  },
+  "layers": [
+    {
+      "use": "PhoneFrame",
+      "x": 660,
+      "y": 300,
+      "zoom": 1.05,
+      "rotate": 4,
+      "props": {
+        "width": 390
+      },
+      "children": [
+        {
+          "use": "FeedGrid",
+          "props": {
+            "width": 364,
+            "cells": [
+              {
+                "isNew": true,
+                "image": "assets/photos/cafe-especialidad.jpg"
+              },
+              {
+                "scheduled": "8 oct",
+                "image": "assets/photos/cafetera.jpg",
+                "format": "reel"
+              },
+              {
+                "scheduled": "6 oct",
+                "image": "assets/photos/croissant.jpg"
+              },
+              {
+                "image": "assets/photos/coffee.jpg",
+                "format": "carousel"
+              },
+              {
+                "tint": "amber"
+              },
+              {
+                "tint": "rose"
+              },
+              {
+                "tint": "slate"
+              },
+              {
+                "tint": "teal"
+              },
+              {
+                "tint": "violet"
+              },
+              {
+                "image": "assets/photos/croissant.jpg"
+              },
+              {
+                "tint": "lime"
+              },
+              {
+                "image": "assets/photos/cafetera.jpg"
+              },
+              {
+                "tint": "amber"
+              },
+              {
+                "image": "assets/photos/coffee.jpg"
+              },
+              {
+                "tint": "violet"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "use": "NotificationToast",
+      "x": 88,
+      "y": 600,
+      "zoom": 1.45,
+      "props": {
+        "variant": "toast",
+        "icon": "CalendarClock",
+        "title": "3 posts programados",
+        "meta": "Se suman a tu grilla a medida que se publican"
+      }
+    }
+  ]
+}

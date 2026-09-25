@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "slide": 5,
+  "total": 5,
+  "swipeHint": "Deslizá",
+  "background": {
+    "variant": "grid",
+    "surface": "background"
+  },
+  "brand": "none",
+  "pill": {
+    "label": "Paso 4"
+  },
+  "headline": "Tu cliente [[aprueba]]\ndesde un link",
+  "body": "Le compartís el calendario y aprueba sin crearse una cuenta.",
+  "cta": {
+    "label": "Probalo gratis"
+  },
+  "layers": [
+    {
+      "use": "PublicationCard",
+      "x": 110,
+      "y": 640,
+      "zoom": 1.6,
+      "rotate": -4,
+      "props": {
+        "caption": "Nuevo blend de temporada",
+        "time": "12:00",
+        "status": "scheduled",
+        "approved": true,
+        "image": "assets/photos/cafe-especialidad.jpg"
+      }
+    },
+    {
+      "use": "NotificationToast",
+      "x": 400,
+      "y": 610,
+      "zoom": 1.75,
+      "props": {
+        "variant": "toast",
+        "icon": "CircleCheck",
+        "title": "Café Origen aprobó contenido",
+        "meta": "3 elementos del calendario compartido"
+      },
+      "rotate": 2
+    }
+  ]
+}

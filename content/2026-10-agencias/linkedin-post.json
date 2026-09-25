@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "eyebrow": "Para agencias",
+  "headline": "Reportes que tu\ncliente entiende",
+  "body": "Las métricas del mes comparadas con el período anterior, listas para enviar en PDF.",
+  "stage": {
+    "background": {
+      "variant": "gradient"
+    },
+    "layers": [
+      {
+        "use": "AnalyticsCard",
+        "x": 60,
+        "y": 70,
+        "zoom": 1.5,
+        "props": {
+          "label": "Alcance",
+          "value": "48,2 mil",
+          "chart": "area",
+          "width": 170
+        }
+      },
+      {
+        "use": "AnalyticsCard",
+        "x": 320,
+        "y": 150,
+        "zoom": 1.5,
+        "props": {
+          "label": "Tasa de interacción",
+          "value": "5,0%",
+          "chart": "bars",
+          "width": 150
+        }
+      },
+      {
+        "use": "NotificationToast",
+        "x": 40,
+        "y": 430,
+        "zoom": 1.3,
+        "props": {
+          "variant": "toast",
+          "icon": "FileText",
+          "title": "Reporte de octubre listo",
+          "meta": "Café Origen · comparado con septiembre"
+        }
+      }
+    ]
+  }
+}

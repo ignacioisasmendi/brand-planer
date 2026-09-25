@@ -1,0 +1,78 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "slide": 3,
+  "total": 5,
+  "swipeHint": "Deslizá",
+  "background": {
+    "variant": "grid",
+    "surface": "background"
+  },
+  "brand": "none",
+  "pill": {
+    "label": "Paso 2"
+  },
+  "headline": "Repartí el trabajo\nen un [[tablero]]",
+  "body": "Cada pieza con responsable, fecha y checklist, a la vista de todo el equipo.",
+  "layers": [
+    {
+      "use": "KanbanColumn",
+      "x": 90,
+      "y": 600,
+      "zoom": 1.5,
+      "rotate": -2,
+      "props": {
+        "name": "En progreso",
+        "tasks": [
+          {
+            "title": "Editar video de lanzamiento",
+            "labels": [
+              "Video"
+            ],
+            "priority": "URGENT",
+            "dueDate": "12 oct",
+            "cover": "red"
+          },
+          {
+            "title": "Escribir copies de la semana",
+            "labels": [
+              "Contenido"
+            ],
+            "priority": "HIGH",
+            "checklistDone": 3,
+            "checklistTotal": 5
+          }
+        ]
+      }
+    },
+    {
+      "use": "KanbanColumn",
+      "x": 560,
+      "y": 650,
+      "zoom": 1.5,
+      "rotate": 2,
+      "props": {
+        "name": "Revisión",
+        "tasks": [
+          {
+            "title": "Aprobar grilla de octubre",
+            "labels": [
+              "Cliente"
+            ],
+            "priority": "HIGH",
+            "checklistDone": 2,
+            "checklistTotal": 2,
+            "cover": "green"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,53 +1,55 @@
 {
-  "align": "center",
-  "brand": "logo",
-  "headline": {
-    "es": "Tu semana,\n[[programada]]",
-    "en": "Your week,\n[[scheduled]]"
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
   },
-  "body": {
-    "es": "Instagram, TikTok y Facebook en un solo calendario.",
-    "en": "Instagram, TikTok and Facebook in one calendar."
-  },
-  "cta": {
-    "label": {
-      "es": "Probalo gratis",
-      "en": "Try it free"
-    }
-  },
-  "copyPosition": "top",
+  "slide": 4,
+  "total": 5,
+  "swipeHint": "Deslizá",
   "background": {
-    "variant": "gradient"
+    "variant": "grid",
+    "surface": "background"
   },
+  "brand": "none",
+  "pill": {
+    "label": "Paso 3"
+  },
+  "headline": "Programá la semana\nen el [[calendario]]",
+  "body": "Instagram, TikTok y Facebook en la misma vista, a la hora que elegís.",
   "layers": [
     {
       "use": "CalendarWeek",
-      "x": 44,
-      "y": 1000,
-      "zoom": 1.55,
+      "x": 88,
+      "y": 600,
+      "zoom": 1.52,
       "props": {
         "days": 4,
-        "startDay": 3,
-        "today": 4,
-        "columnWidth": 160,
-        "height": 520,
+        "startDay": 6,
+        "today": 7,
+        "columnWidth": 148,
+        "height": 390,
         "posts": [
           {
-            "day": 3,
+            "day": 6,
             "time": "09:30",
             "caption": "Colección primavera",
             "status": "published",
             "image": "assets/photos/croissant.jpg"
           },
           {
-            "day": 4,
+            "day": 7,
             "time": "12:00",
             "caption": "Nuevo blend",
             "status": "scheduled",
             "image": "assets/photos/cafe-especialidad.jpg"
           },
           {
-            "day": 5,
+            "day": 8,
             "time": "18:00",
             "caption": "Detrás de la barra",
             "platform": "tiktok",
@@ -55,7 +57,7 @@
             "image": "assets/photos/cafetera.jpg"
           },
           {
-            "day": 6,
+            "day": 9,
             "time": "10:00",
             "caption": "Receta del día",
             "platform": "facebook",

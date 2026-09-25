@@ -2,7 +2,7 @@
 
 Planer's marketing graphics: Remotion 4 + React 19 + Tailwind v4 + zod. See the workspace
 [../CLAUDE.md](../CLAUDE.md). The vocabulary lives in [CATALOG.md](CATALOG.md); the workflow
-and hard rules live in the user-level `brand-graphics` skill.
+and hard rules live in the `brand-graphics` skill (`.claude/skills/`, see below).
 
 ## Commands
 
@@ -10,6 +10,7 @@ and hard rules live in the user-level `brand-graphics` skill.
 npm run render -- content/<yyyy-mm>-<slug>   # every JSON in the folder → out/<folder>/<file>-<locale>-<theme>.png
 npm run studio                               # Remotion Studio: templates + Specimen
 npm run catalog                              # re-render docs/catalog/ thumbnails
+npm run sheet                                # every component on one named page → docs/catalog/sheet-{light,dark}.png
 npm run sync-tokens                          # regenerate src/tokens/ from ../spa (run after spa token changes)
 npm run typecheck                            # tsc --noEmit
 ```
@@ -23,6 +24,19 @@ npm run typecheck                            # tsc --noEmit
 - `src/templates/`: `layouts.tsx` (SplitLayout / PosterLayout) + `index.tsx` (the 7 formats).
 - `content/`: one folder per piece. `content/_catalog/` has the demos (also Studio defaults).
 - `out/`: renders (git-ignored).
+
+## Claude skill + agent (versioned here)
+
+- `.claude/skills/brand-graphics/SKILL.md`: the workflow and hard rules for making any piece.
+- `.claude/agents/release-notes.md`: release copy (es + en) + ReleaseHero images.
+
+The parent `planer/` folder is not a repo, so both are symlinked into `~/.claude/` so that every
+Planer repo can use them. Edit them **here**. On a fresh machine, recreate the links:
+
+```bash
+ln -s "$PWD/.claude/skills/brand-graphics" ~/.claude/skills/brand-graphics
+ln -s "$PWD/.claude/agents/release-notes.md" ~/.claude/agents/release-notes.md
+```
 
 ## Gotchas
 

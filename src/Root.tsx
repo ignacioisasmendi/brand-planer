@@ -2,24 +2,12 @@ import { Folder, Still } from 'remotion';
 import { z } from 'zod';
 import './styles/index.css';
 import './lib/fonts';
-import { splitContent, type ContentFile } from './lib/content';
+import { demoFor } from './catalog/demos';
+import { ComponentSheet, sheetHeight, sheetSchema, SHEET_WIDTH } from './catalog/sheet';
 import { THEMES } from './lib/i18n';
 import { Piece } from './templates/layouts';
 import { REGISTRY, type LayerName } from './templates/stage';
 import { TEMPLATES } from './templates';
-
-// Catalog demos double as each template's Studio defaults.
-const demos = (require as any).context('../content/_catalog', false, /\.json$/);
-/**
- * Parsed through the template schema so every `.default()` is filled in —
- * Studio's props editor walks the schema and reads `value[key]` on nested
- * objects (e.g. `copyBackground.variant`), which crashes on a missing default.
- */
-function demoFor(file: string, schema: z.AnyZodObject): Record<string, unknown> {
-  const key = `./${file}.json`;
-  const raw = demos.keys().includes(key) ? splitContent(demos(key) as ContentFile).props : {};
-  return schema.parse(raw);
-}
 
 /**
  * Renders one catalog component on a plain surface — used for CATALOG.md
@@ -82,6 +70,14 @@ export const RemotionRoot = () => (
         schema={specimenSchema}
         defaultProps={specimenSchema.parse({ use: 'PostCard', props: {}, zoom: 1 })}
         calculateMetadata={({ props }) => ({ width: props.width ?? 800, height: props.height ?? 500 })}
+      />
+      <Still
+        id="ComponentSheet"
+        component={ComponentSheet}
+        width={SHEET_WIDTH}
+        height={sheetHeight()}
+        schema={sheetSchema}
+        defaultProps={sheetSchema.parse({})}
       />
     </Folder>
   </>

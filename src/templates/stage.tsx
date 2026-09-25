@@ -42,6 +42,7 @@ export const REGISTRY = {
   NotificationToast: { schema: M.notificationToastSchema, C: M.NotificationToast },
   AvatarStack: { schema: M.avatarStackSchema, C: M.AvatarStack },
   NotebookPage: { schema: M.notebookPageSchema, C: M.NotebookPage },
+  FeedGrid: { schema: M.feedGridSchema, C: M.FeedGrid },
 } satisfies Record<string, Entry>;
 
 export type LayerName = keyof typeof REGISTRY;

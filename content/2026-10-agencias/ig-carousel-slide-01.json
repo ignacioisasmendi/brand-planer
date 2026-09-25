@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "slide": 1,
+  "total": 5,
+  "swipeHint": "Deslizá",
+  "background": {
+    "variant": "grid",
+    "surface": "background"
+  },
+  "brand": "wordmark",
+  "pill": {
+    "label": "Guía para agencias"
+  },
+  "headline": "Cómo organizar\nel mes de un cliente\nen [[Planer]]",
+  "body": "Cuatro pasos, del brief a la aprobación.",
+  "layers": [
+    {
+      "use": "PublicationCard",
+      "x": 70,
+      "y": 760,
+      "zoom": 1.35,
+      "rotate": -6,
+      "props": {
+        "caption": "Colección primavera",
+        "time": "09:30",
+        "status": "published",
+        "image": "assets/photos/croissant.jpg"
+      }
+    },
+    {
+      "use": "PublicationCard",
+      "x": 392,
+      "y": 720,
+      "zoom": 1.35,
+      "rotate": 0,
+      "props": {
+        "caption": "Nuevo blend de temporada",
+        "time": "12:00",
+        "status": "scheduled",
+        "approved": true,
+        "image": "assets/photos/cafe-especialidad.jpg"
+      }
+    },
+    {
+      "use": "PublicationCard",
+      "x": 714,
+      "y": 760,
+      "zoom": 1.35,
+      "rotate": 6,
+      "props": {
+        "caption": "Detrás de la barra",
+        "time": "18:00",
+        "platform": "tiktok",
+        "format": "reel",
+        "status": "draft",
+        "image": "assets/photos/cafetera.jpg"
+      }
+    }
+  ]
+}

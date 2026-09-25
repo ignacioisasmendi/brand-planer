@@ -5,7 +5,10 @@ Every name below is exact: it is the `use` of a layer in content JSON, and the t
 
 - **Tokens** come from the spa (`npm run sync-tokens` regenerates `src/tokens/` from `spa/app/globals.css`). Never hard-code a colour.
 - **Font** is Inter (variable, local woff2), always. Geist Mono only for code or tabular numbers.
-- Thumbnails: `npm run catalog` → `docs/catalog/`.
+- **See everything at once:** `npm run sheet` renders every primitive, mockup and template on one page, each under its
+  exact name: [docs/catalog/sheet-light.png](docs/catalog/sheet-light.png) · [sheet-dark.png](docs/catalog/sheet-dark.png).
+  Live in Studio (`npm run studio`): **Catalog → ComponentSheet**.
+- Individual thumbnails: `npm run catalog` → `docs/catalog/`.
 
 ## How a piece is made
 
@@ -74,6 +77,7 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 | **PublicationCard** | A scheduled post in Planer's calendar | `caption`, `time`, `platform`, `format`, `status` (`draft`·`scheduled`·`published`·`paused`·`manual`·`error`), `approved`, `image` or `tint`, `width` | ![](docs/catalog/PublicationCard.png) |
 | **CalendarWeek** | Planer's week view with posts | `startDay`, `today`, `days` (1–7 columns), `posts[]` (PublicationCard props + `day`), `columnWidth`, `height` | ![](docs/catalog/CalendarWeek.png) |
 | **KanbanColumn** | One list of the tasks board | `name`, `tasks[]` (`title`, `labels`, `priority`, `dueDate`, `checklistDone`/`Total`, `cover`, `done`), `width` | ![](docs/catalog/KanbanColumn.png) |
+| **FeedGrid** | Instagram profile + grid with scheduled posts (spa feed preview) | `username`, `avatar`, `posts`/`followers`/`following`, `bio`, `cells[]` (`image` or `tint`, `scheduled` date, `isNew`, `format`), `width` | ![](docs/catalog/FeedGrid.png) |
 | **NotebookPage** | A Cuaderno page | `client`, `parent`, `icon`, `title`, `shared`, `editedBy`, `blocks[]` (`heading`·`paragraph`·`bullets`·`todos`·`palette`), `width` | ![](docs/catalog/NotebookPage.png) |
 | **PhoneFrame** | Modern phone; `children` layers flow inside | `width`, `screen` (`background`·`card`·`black`), `time`, `center`, `padding` | ![](docs/catalog/PhoneFrame.png) |
 | **BrowserFrame** | Desktop browser window; `children` inside | `width`, `height`, `url` | ![](docs/catalog/BrowserFrame.png) |
@@ -89,4 +93,4 @@ Every template takes `theme` (`light`|`dark`) and `locale` (`es`|`en`), plus the
 Missing something? Add it as a component or template first, then use it:
 1. Write the component in `src/primitives/` or `src/mockups/` with a zod schema (`<name>Schema`). For product UI, copy the styles from the spa and don't import from it.
 2. Register it in `REGISTRY` (`src/templates/stage.tsx`).
-3. Add a specimen in `scripts/catalog.ts` and a row in this file, then run `npm run catalog`.
+3. Add a specimen in `src/catalog/specimens.ts` (feeds both the thumbnails and the sheet) and a row in this file, then run `npm run catalog && npm run sheet`.

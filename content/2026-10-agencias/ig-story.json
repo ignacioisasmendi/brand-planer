@@ -1,0 +1,71 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "align": "center",
+  "brand": "logo",
+  "headline": "Tu cliente aprueba\n[[desde un link]]",
+  "body": "Sin cuentas nuevas ni capturas por WhatsApp.",
+  "cta": {
+    "label": "Probalo gratis"
+  },
+  "background": {
+    "variant": "gradient"
+  },
+  "layers": [
+    {
+      "use": "PhoneFrame",
+      "x": 250,
+      "y": 880,
+      "zoom": 1.5,
+      "props": {
+        "width": 390,
+        "padding": 16,
+        "screen": "background"
+      },
+      "children": [
+        {
+          "use": "PublicationCard",
+          "props": {
+            "caption": "Nuevo blend de temporada",
+            "time": "12:00",
+            "status": "scheduled",
+            "approved": true,
+            "image": "assets/photos/cafe-especialidad.jpg",
+            "width": 330
+          }
+        },
+        {
+          "use": "PublicationCard",
+          "props": {
+            "caption": "Detrás de la barra",
+            "time": "18:00",
+            "platform": "tiktok",
+            "format": "reel",
+            "status": "scheduled",
+            "image": "assets/photos/cafetera.jpg",
+            "width": 330
+          }
+        }
+      ]
+    },
+    {
+      "use": "NotificationToast",
+      "x": 120,
+      "y": 1200,
+      "zoom": 1.7,
+      "props": {
+        "variant": "toast",
+        "icon": "CircleCheck",
+        "title": "Café Origen aprobó contenido",
+        "meta": "Aprobado y programado automáticamente"
+      }
+    }
+  ]
+}

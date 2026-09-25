@@ -8,7 +8,8 @@
     "render": "tsx scripts/render.ts",
     "catalog": "tsx scripts/catalog.ts",
     "sync-tokens": "tsx scripts/sync-tokens.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sheet": "tsx scripts/sheet.ts"
   },
   "dependencies": {
     "@remotion/bundler": "^4.0.528",

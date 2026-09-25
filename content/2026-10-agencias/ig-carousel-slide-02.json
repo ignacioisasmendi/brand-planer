@@ -1,0 +1,63 @@
+{
+  "variants": {
+    "locale": [
+      "es"
+    ],
+    "theme": [
+      "light",
+      "dark"
+    ]
+  },
+  "slide": 2,
+  "total": 5,
+  "swipeHint": "Deslizá",
+  "background": {
+    "variant": "grid",
+    "surface": "background"
+  },
+  "brand": "none",
+  "pill": {
+    "label": "Paso 1"
+  },
+  "headline": "Arrancá por el brief,\nen el [[Cuaderno]]",
+  "body": "Tono de voz, paleta e ideas de cada cliente en una página que podés compartirle.",
+  "layers": [
+    {
+      "use": "NotebookPage",
+      "x": 150,
+      "y": 560,
+      "zoom": 1.45,
+      "rotate": -2,
+      "props": {
+        "client": "Café Origen",
+        "icon": "☕",
+        "title": "Brief de primavera",
+        "editedBy": "Ana",
+        "width": 540,
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tono cálido y cercano. El foco del mes es el **blend de temporada**."
+          },
+          {
+            "type": "palette",
+            "swatches": [
+              {
+                "hex": "#6b3f2a",
+                "name": "Tostado"
+              },
+              {
+                "hex": "#e9d8c4",
+                "name": "Crema"
+              },
+              {
+                "hex": "#2f4a3a",
+                "name": "Hoja"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
